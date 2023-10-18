@@ -55,3 +55,14 @@ section {
     background-color: white;
     border-radius: 8px;
 }
+
+/* word guess section styes */
+.word-guess {
+    width: 55vw;
+    height: 400px;
+}
+
+.results {
+    width: 30vw;
+    height: 400px;
+}
