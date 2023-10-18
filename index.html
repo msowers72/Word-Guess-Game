@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="./assets/js/index.js" defer></script>
     <title>Word-Guess-Game</title>
 </head>
+
 <body>
     <!-- header -->
     <header>
@@ -21,7 +23,29 @@
                 <div class="large-font word-blanks">J _ v _ S c r_ _t</div>
             </div>
         </section>
+
+        <!-- card results section -->
+        <section>
+            <div class="card results">
+                <!-- win-loss-container -->
+                <div class="win-loss-container">
+                    <div>
+                        <h2>Wins: <span class="win">0</span></h2>
+                        <h2>Losses: <span class="lose">0</span></h2>
+                    </div>
+                    <button class="reset-button">Reset Score</button>
+                </div>
+                <!-- card timer -->
+                <div class="card timer">
+                    <div class="timer-text">
+                        <div class="large-font timer-count">10</div>
+                        <h3>seconds remaining</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    
+
 </body>
+
 </html>
