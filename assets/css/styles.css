@@ -88,3 +88,16 @@ section {
     font-size: 3.5em;
     text-align: center;
 }
+
+/* timer styles */
+.timer {
+    height: 240px;
+    padding: 10px;
+    background: #13293d;
+    color: #fff;
+    text-align: center;
+}
+
+.timer-text {
+    padding: 55px;
+}
