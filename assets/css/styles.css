@@ -39,3 +39,19 @@ header {
     color: #fff;
     border-bottom: 30px #879274;
 }
+
+/* styles for main section */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* section styles */
+section {
+    flex: 0 auto;
+    padding: 8px;
+    margin-top: 50px;
+    background-color: white;
+    border-radius: 8px;
+}
