@@ -1,7 +1,7 @@
 /* Basic styles */
 * {
     box-sizing: border-box;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 body {
@@ -19,6 +19,13 @@ body {
     height: 30px;
     line-height: 8px;
     margin-top: 20px;
+}
+
+/* styled the win-loss-container */
+.win-loss-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
 }
 
 /* button styles */
