@@ -25,5 +25,35 @@ function init() {
     // TODO: getLosses() function needs to be set-up
 }
 
+// The startGame function is called when the start button is clicked
+function startGame() {
+    isWin = false;
+    timerCount = 10;
+    // Prevent start button from being clicked when round is in rogress
+    startButton.disabled = true;
+    rednderBlanks();
+    // TODO: startTimer()
+   
+}
+
+// Creates blanks on screen
+function rednderBlanks() {
+    // Randomly picks word from words array
+    chosenWord = words[Math.floor(Math.random() * words.length)];
+    lettersInChosenWord = chosenWord.split("");
+    numBlanks = lettersInChosenWord.length;
+    blanksLetters = [];
+
+    // sue loop to push blanks to blankLetters array
+    for (var i = 0; i < numBlanks; i++) {
+        blanksLetters.push("_")
+    }
+    // Converts blankLetters array into a string and renders it on the screeen
+    wordBlank.textContent = blanksLetters.join(" ")
+}
+
+// Attach event listener to start button to call startGame functin on click
+startButton.addEventListener("click", startGame)
+
 // Calls init() so that it firs when the page opens
 init()
