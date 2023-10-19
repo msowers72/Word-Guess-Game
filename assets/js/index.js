@@ -103,6 +103,13 @@ function setLosses() {
     localStorage.setItem("loseCount", loseCounter)
 }
 
+function checkWin() {
+    // if the word equals the blankLetters array when converted to string, set isWin to true
+    if (chosenWord === blanksLetters.join("")) {
+        isWin = true;
+    }
+}
+
 // Tests if guessed letter is in word and renders it to the screen
 function checkLetters(letter) {
     var letterInWord = false;
@@ -120,6 +127,23 @@ function checkLetters(letter) {
         wordBlank.textContent = blanksLetters.join(" ");
     }
 }
+
+// Attach even listener to document to listen for key event
+document.addEventListener("keydown", function (event) {
+    // if the ocunt is zero, exit function base case
+    if (timerCount === 0) {
+        return;
+    }
+    // Convert all keys to lower case
+    var key = event.key.toLowerCase();
+    var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
+    // Test if key pushed is letter
+    if (alphabetNumericCharacters.includes(key)) {
+        var letterGuessed = event.key;
+        checkLetters(letterGuessed)
+        checkWin()
+    }
+})
 
 // Attach event listener to start button to call startGame functin on click
 startButton.addEventListener("click", startGame)
