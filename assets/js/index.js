@@ -32,8 +32,30 @@ function startGame() {
     // Prevent start button from being clicked when round is in rogress
     startButton.disabled = true;
     rednderBlanks();
-    // TODO: startTimer()
+    startTimer()
    
+}
+
+// The setTimer function starts and stops the timer and triggers winGame() and loseGame()
+function startTimer() {
+    // Sets timer
+    timer = setInterval(function () {
+        timerCount--;
+        timerElement.textContent = timerCount;
+        if (timerCount >= 0) {
+            // Tests if win condition is met
+            if (isWin && timerCount > 0) {
+                clearInterval(timer);
+                winGame()
+            }
+        }
+    }, 1000)
+    // tests if time has run out
+    if (timerCount === 0) {
+        // Clears interval
+        clearInterval(timer);
+        loseGame()
+    }
 }
 
 // Creates blanks on screen
