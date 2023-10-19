@@ -36,7 +36,7 @@ As a user, I want to try and guess a word by filling in a number of blanks that 
 <!-- ![Tux, the Linux mascot](https://img.shields.io/badge/License-MIT-green) -->
   
  ## Deployed
- [Project Tracker Link](https://msowers72.github.io/Word-Guess-Game/)
+ [Word-Guess-Game](https://msowers72.github.io/Word-Guess-Game/)
  
  
  ![images](./assets/img/stock%20img.jpg) 
