@@ -90,6 +90,18 @@ function rednderBlanks() {
     wordBlank.textContent = blanksLetters.join(" ")
 }
 
+// Updates win cont on screen and sets win count to client storage
+function setWins() {
+    win.textContent = winCounter;
+    localStorage.setItem("winCount", winCounter);
+}
+
+// Updates lose count on screen and sets lose count to client storage
+function setLosses() {
+    lose.textContent = loseCounter;
+    localStorage.setItem("loseCount", loseCounter)
+}
+
 // Attach event listener to start button to call startGame functin on click
 startButton.addEventListener("click", startGame)
 
