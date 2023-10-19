@@ -21,8 +21,8 @@ var words = ["variable", "array", "modulus", "object", "function", "string", "bo
 
 // The init function is calle when the page loads
 function init() {
-    // TODO: getWins() function needs to be set-up
-    // TODO: getLosses() function needs to be set-up
+    getWins() 
+    getLosses() 
 }
 
 // The startGame function is called when the start button is clicked
@@ -65,13 +65,14 @@ function startTimer() {
                 winGame()
             }
         }
-    }, 1000)
-    // tests if time has run out
+      // tests if time has run out
     if (timerCount === 0) {
         // Clears interval
         clearInterval(timer);
         loseGame()
     }
+    }, 1000)
+  
 }
 
 // Creates blanks on screen
@@ -102,6 +103,31 @@ function setLosses() {
     lose.textContent = loseCounter;
     localStorage.setItem("loseCount", loseCounter)
 }
+
+// gitWins and getlosses functions are used by the init() function
+function getWins() {
+    // Get stored value from client storage, if it exists
+    var storedWins = localStorage.getItem("winCount");
+    // If stored value doesn't exist, set counter to 0
+    if (storedWins === null) {
+        winCounter = 0;
+    } else {
+        // If a value is retrieveed from client storge set the winCounter to that value
+        winCounter = storedWins
+    }
+    // Render win count to page
+    win.textContent = winCounter
+}
+
+function getLosses() {
+    var storedLosses = localStorage.getItem("loseCount");
+    if (storedLosses === null) {
+        loseCounter = 0;
+    } else {
+        loseCounter = storedLosses;
+    }
+    lose.textContent = loseCounter
+    }
 
 function checkWin() {
     // if the word equals the blankLetters array when converted to string, set isWin to true
