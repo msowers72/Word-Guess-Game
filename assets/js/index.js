@@ -3,6 +3,7 @@ var win = document.querySelector(".win");
 var lose = document.querySelector(".lose");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button")
+var resetButton = document.querySelector(".reset-button");
 
 var chosenWord = "";
 var numBlanks = 0;
@@ -171,8 +172,20 @@ document.addEventListener("keydown", function (event) {
     }
 })
 
+function resetGame() {
+    // Resets win an loss counts
+    winCounter = 0;
+    loseCounter = 0;
+    // Renders win and loss counts and sets them into client storage
+    setWins()
+    setLosses()
+}
+
 // Attach event listener to start button to call startGame functin on click
 startButton.addEventListener("click", startGame)
+
+// Attached event listener to button
+resetButton.addEventListener("click", resetGame)
 
 // Calls init() so that it firs when the page opens
 init()
