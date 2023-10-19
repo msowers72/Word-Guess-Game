@@ -78,6 +78,7 @@ function startTimer() {
 function rednderBlanks() {
     // Randomly picks word from words array
     chosenWord = words[Math.floor(Math.random() * words.length)];
+    console.log(chosenWord)
     lettersInChosenWord = chosenWord.split("");
     numBlanks = lettersInChosenWord.length;
     blanksLetters = [];
@@ -100,6 +101,24 @@ function setWins() {
 function setLosses() {
     lose.textContent = loseCounter;
     localStorage.setItem("loseCount", loseCounter)
+}
+
+// Tests if guessed letter is in word and renders it to the screen
+function checkLetters(letter) {
+    var letterInWord = false;
+    for (var i = 0; i < numBlanks; i++) {
+        if (chosenWord[i] === letter) {
+            letterInWord = true;
+        }
+    }
+    if (letterInWord) {
+        for (var j = 0; j < numBlanks; j++) {
+            if (chosenWord[j] === letter) {
+                blanksLetters[j] = letter;
+            }
+        }
+        wordBlank.textContent = blanksLetters.join(" ");
+    }
 }
 
 // Attach event listener to start button to call startGame functin on click
